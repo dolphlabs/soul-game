@@ -1,0 +1,193 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens for Color Rush game design */
+  --background: oklch(1 0 0); /* #ffffff - Clean white background */
+  --foreground: oklch(0.278 0.015 255.395); /* #374151 - Dark gray text */
+  --card: oklch(0.985 0.017 17.38); /* #fef2f2 - Light red card background */
+  --card-foreground: oklch(0.278 0.015 255.395); /* #374151 - Text on cards */
+  --popover: oklch(1 0 0); /* #ffffff - White popover background */
+  --popover-foreground: oklch(0.278 0.015 255.395); /* #374151 - Popover text */
+  --primary: oklch(0.567 0.227 27.33); /* #dc2626 - Vibrant red primary */
+  --primary-foreground: oklch(1 0 0); /* #ffffff - White text on primary */
+  --secondary: oklch(0.735 0.156 70.67); /* #f59e0b - Orange accent */
+  --secondary-foreground: oklch(1 0 0); /* #ffffff - White text on secondary */
+  --muted: oklch(0.961 0.006 247.858); /* #f1f5f9 - Light muted background */
+  --muted-foreground: oklch(0.522 0.016 251.843); /* #6b7280 - Muted text */
+  --accent: oklch(0.735 0.156 70.67); /* #f59e0b - Orange accent */
+  --accent-foreground: oklch(1 0 0); /* #ffffff - White text on accent */
+  --destructive: oklch(0.567 0.227 27.33); /* #dc2626 - Red for destructive actions */
+  --destructive-foreground: oklch(1 0 0); /* #ffffff - White text on destructive */
+  --border: oklch(0.522 0.016 251.843); /* #6b7280 - Gray border */
+  --input: oklch(0.961 0.006 247.858); /* #f1f5f9 - Light input background */
+  --ring: oklch(0.567 0.227 27.33); /* #dc2626 - Red focus ring */
+  --chart-1: oklch(0.567 0.227 27.33); /* #dc2626 - Red chart color */
+  --chart-2: oklch(0.735 0.156 70.67); /* #f59e0b - Orange chart color */
+  --chart-3: oklch(0.627 0.204 293.33); /* #8b5cf6 - Purple chart color */
+  --chart-4: oklch(0.522 0.016 251.843); /* #6b7280 - Gray chart color */
+  --chart-5: oklch(0.278 0.015 255.395); /* #374151 - Dark gray chart color */
+  --radius: 0.5rem; /* Rounded corners */
+  --sidebar: oklch(0.985 0.017 17.38); /* #fef2f2 - Light red sidebar */
+  --sidebar-foreground: oklch(0.278 0.015 255.395); /* #374151 - Sidebar text */
+  --sidebar-primary: oklch(0.567 0.227 27.33); /* #dc2626 - Primary sidebar accent */
+  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff - Text on primary sidebar */
+  --sidebar-accent: oklch(0.735 0.156 70.67); /* #f59e0b - Orange sidebar accent */
+  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff - Text on sidebar accent */
+  --sidebar-border: oklch(0.522 0.016 251.843); /* #6b7280 - Sidebar border */
+  --sidebar-ring: oklch(0.567 0.227 27.33); /* #dc2626 - Sidebar focus ring */
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+/* Added game-specific color variables for Color Rush */
+:root {
+  --game-red: oklch(0.567 0.227 27.33); /* #dc2626 */
+  --game-orange: oklch(0.735 0.156 70.67); /* #f59e0b */
+  --game-blue: oklch(0.627 0.204 293.33); /* #3b82f6 */
+  --game-green: oklch(0.627 0.204 142.5); /* #10b981 */
+  --game-purple: oklch(0.627 0.204 293.33); /* #8b5cf6 */
+  --game-pink: oklch(0.627 0.204 328.36); /* #ec4899 */
+  --game-yellow: oklch(0.735 0.156 85.87); /* #eab308 */
+  --game-teal: oklch(0.627 0.204 180.0); /* #14b8a6 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* Added game color tokens */
+  --color-game-red: var(--game-red);
+  --color-game-orange: var(--game-orange);
+  --color-game-blue: var(--game-blue);
+  --color-game-green: var(--game-green);
+  --color-game-purple: var(--game-purple);
+  --color-game-pink: var(--game-pink);
+  --color-game-yellow: var(--game-yellow);
+  --color-game-teal: var(--game-teal);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added game-specific animations and utilities */
+@layer utilities {
+  .game-pulse {
+    animation: game-pulse 0.5s ease-in-out;
+  }
+
+  .game-shake {
+    animation: game-shake 0.5s ease-in-out;
+  }
+
+  .game-bounce {
+    animation: game-bounce 0.6s ease-in-out;
+  }
+}
+
+@keyframes game-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes game-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes game-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
